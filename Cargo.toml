@@ -12,9 +12,10 @@ crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 wasm-bindgen = "0.2.84"
-qrcode = "0.12.0"
+qrcode = { version = "0.14", features = ["image"] }
 js-sys = "0.3.61"
 web-sys = { version = "0.3.61", features = ["console"] }
+image = "0.24.7"
 
 [dev-dependencies]
 wasm-bindgen-test = "0.3.34"
