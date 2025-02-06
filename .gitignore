@@ -1,0 +1,15 @@
+/target/
+/debug/
+**/*.rs.bk
+*.pdb
+
+# IDEの設定
+.idea/
+.vscode/
+
+# OSのメタデータ
+.DS_Store
+desktop.ini
+
+# Cargo.lockの扱い（アプリケーションの場合はコメントアウト）
+# Cargo.lock
