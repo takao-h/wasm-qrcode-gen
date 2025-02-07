@@ -1,13 +1,12 @@
-use qr_wasm_lib::generate_qr_code;
+use wasm_qrcode_gen::generate_qr_code;
 
 fn main() {
     let qr_data = "https://www.example.com";
-    let qr_size = 10; // ピクセル単位でのモジュールサイズ
+    let qr_size = 10;
     
-    let png_data = generate_qr_code(qr_data, qr_size);
+    let svg_data = generate_qr_code(qr_data, qr_size);
     
-    // PNGデータをファイルに保存
-    std::fs::write("qrcode.png", png_data).unwrap();
+    std::fs::write("qrcode.svg", svg_data).unwrap();
     
-    println!("QR code generated and saved as qrcode.png");
+    println!("QR code generated and saved as qrcode.svg");
 }
