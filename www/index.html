@@ -9,13 +9,20 @@
     <div>
         <img id="qr-code" alt="QR Code" />
     </div>
-    <script>
-        async function init() {
-            const { generate_qr_code } = await import('./pkg/wasm_qrcode_gen.js');
-            const qrCode = generate_qr_code("https://www.example.com", 10);
-            document.getElementById('qr-code').src = qrCode;
+    <script type="module">
+        import init, { generate_qr_code } from './pkg/wasm_qrcode_gen.js';
+
+        async function run() {
+            await init();
+            try {
+                const qrCode = generate_qr_code("https://www.example.com", 256);
+                document.getElementById('qr-code').src = qrCode;
+            } catch (e) {
+                console.error("Error generating QR code:", e);
+            }
         }
-        init();
+
+        run();
     </script>
 </body>
 </html>
